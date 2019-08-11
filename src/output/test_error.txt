@@ -1,0 +1,4 @@
+  File "test.py", line 13
+    print(time.time())asdf
+                         ^
+SyntaxError: invalid syntax

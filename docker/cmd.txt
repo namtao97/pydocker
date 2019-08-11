@@ -1,0 +1,14 @@
+# BUILD IMAGE AND RUN A DOCKER CONTAINER
+sudo docker build -t pydocker .
+sudo docker run -it --rm pydocker /bin/bash
+
+# REMOVE DOCKER CONTAINER, REMOVE ALL STOPPED DOCKER CONTAINER AND REMOVE IMAGE
+sudo docker container rm 26d988f816f1
+sudo docker system prune
+docker image rm 75835a67d134
+
+# CREATE A DIRECTORY FROM HOST TO CONTAINER
+sudo docker exec -i 17d92b751535 sh -c 'mkdir -p /usr/src/app/upload_code'
+
+# COPY A FILE FROM HOST TO CONTAINER
+sudo docker exec -i 17d92b751535 sh -c 'cat > /usr/src/app/upload_code/test.py' < ../src/upload_code/test.py
